@@ -327,6 +327,7 @@ static inline void net_nbuf_copy_user_data(struct net_buf *new,
 
 static inline void net_nbuf_set_src_ipv6_addr(struct net_buf *buf)
 {
+	(void)buf;
 	net_if_ipv6_select_src_addr(net_context_get_iface(
 					    net_nbuf_context(buf)),
 				    &NET_IPV6_BUF(buf)->src);

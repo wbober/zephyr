@@ -595,7 +595,7 @@ ARCH = $(subst $(DQUOTE),,$(CONFIG_ARCH))
 export ARCH
 
 ifeq ($(CONFIG_DEBUG),y)
-KBUILD_CFLAGS += -Og
+KBUILD_CFLAGS += -O0
 else
 KBUILD_CFLAGS += -Os
 endif

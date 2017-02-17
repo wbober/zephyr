@@ -1,0 +1,33 @@
+# Kconfig - OpenThread stack
+
+menuconfig OPENTHREAD
+	bool
+	prompt "OpenThread Support"
+	default n
+	help
+	  This option builds OpenThread platform
+
+config OPENTHREAD_COAP
+	bool
+	prompt "Built-in CoAP implementation"
+	default n
+	
+config OPENTHREAD_LOG_LEVEL
+	int
+	prompt "Default log level"
+	default 1
+	
+config OPENTHREAD_CLI
+	bool
+	prompt "CLI support"
+	default y
+	
+config CONFIG_OPENTHREAD_DIAG
+	bool
+	prompt "Diagnostic functions support"
+	default n
+	
+config OPENTHREAD_PLATFORM_FLASH_DEVICE_NAME
+	string
+	prompt "Flash device name"
+	default "NRF5_FLASH"

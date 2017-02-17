@@ -182,6 +182,7 @@ static inline void net_analyze_stack(const char *name,
 				     unsigned char *stack,
 				     size_t size)
 {
+	(void)name;
 	unsigned stack_offset, pcnt, unused;
 
 	net_analyze_stack_get_values(stack, size, &stack_offset,
