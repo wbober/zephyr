@@ -115,6 +115,24 @@ size_t strlen(const char *s)
 
 /**
  *
+ * @brief Determine the length of a fixed-size string
+ *
+ * @return number of bytes in string <s> if less then maxlen or maxlen otherwise
+ */
+size_t strnlen(const char *s, size_t maxlen)
+{
+	size_t n = 0;
+
+	while ((*s != '\0') && (n < maxlen)) {
+		s++;
+		n++;
+	}
+
+	return n;
+}
+
+/**
+ *
  * @brief Compare two strings
  *
  * @return negative # if <s1> < <s2>, 0 if <s1> == <s2>, else positive #
