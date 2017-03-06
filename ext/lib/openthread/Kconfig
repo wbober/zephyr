@@ -6,6 +6,16 @@ menuconfig OPENTHREAD
 	default n
 	help
 	  This option builds OpenThread platform
+	
+config OPENTHREAD_PANID
+	int
+	prompt "Default PAN ID"
+	default 43981
+	
+config OPENTHREAD_CHANNEL
+	int
+	prompt "Default Channel"
+	default 11
 
 config OPENTHREAD_COAP
 	bool
