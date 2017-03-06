@@ -71,7 +71,7 @@ static void dataInit(void)
 	tx_pkt = net_nbuf_get_reserve_tx(0, K_NO_WAIT);
 	assert(tx_pkt != NULL);
 
-	tx_payload = net_nbuf_get_reserve_data(0, K_NO_WAIT);
+	tx_payload = net_nbuf_get_reserve_tx_data(0, K_NO_WAIT);
 	assert(tx_payload != NULL);
 
 	net_buf_frag_insert(tx_pkt, tx_payload);
