@@ -30,7 +30,7 @@
 #include <stdio.h>
 
 #include "platform-zephyr.h"
-#include <platform/logging.h>
+#include <openthread/platform/logging.h>
 
 #define SYS_LOG_DOMAIN "OPEN_THREAD"
 #define SYS_LOG_LEVEL 4

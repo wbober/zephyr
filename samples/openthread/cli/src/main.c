@@ -35,11 +35,11 @@
 #endif
 
 #include <kernel.h>
-#include <openthread.h>
-#include <openthread-diag.h>
-#include <openthread-tasklet.h>
-#include <cli/cli-uart.h>
-#include <platform/platform.h>
+#include <openthread/openthread.h>
+#include <openthread/diag.h>
+#include <openthread/cli.h>
+#include <openthread/tasklet.h>
+#include <openthread/platform/platform.h>
 #include <assert.h>
 
 #define SYS_LOG_LEVEL 4
@@ -50,14 +50,14 @@ void _fini(void)
 
 }
 
-void otSignalTaskletPending(otInstance *aInstance)
+void otTaskletsSignalPending(otInstance *aInstance)
 {
     (void)aInstance;
 }
 
 void state_changed_callback(uint32_t flags, void * p_context)
 {
-	SYS_LOG_INF("State changed! Flags: 0x%08x Current role: %d", flags, otGetDeviceRole(p_context));
+	SYS_LOG_INF("State changed! Flags: 0x%08x Current role: %d", flags, otThreadGetDeviceRole(p_context));
 }
 
 static otInstance * initialize_thread(void)
@@ -70,7 +70,7 @@ static otInstance * initialize_thread(void)
     otCliUartInit(p_instance);
 
     SYS_LOG_INF("Thread version: %s", otGetVersionString());
-    SYS_LOG_INF("Network name:   %s", otGetNetworkName(p_instance));
+    SYS_LOG_INF("Network name:   %s", otThreadGetNetworkName(p_instance));
 
     otSetStateChangedCallback(p_instance, &state_changed_callback, p_instance);
 
@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
 
     while (1)
     {
-        otProcessQueuedTasklets(sInstance);
+    	otTaskletsProcess(sInstance);
         PlatformProcessDrivers(sInstance);
 
 #if 0

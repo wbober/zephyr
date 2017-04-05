@@ -40,10 +40,10 @@
 #include <stdlib.h>
 #include "platform-zephyr.h"
 
-#include <openthread.h>
-#include <openthread-tasklet.h>
-#include <platform/alarm.h>
-#include <platform/uart.h>
+#include <openthread/openthread.h>
+#include <openthread/tasklet.h>
+#include <openthread/platform/alarm.h>
+#include <openthread/platform/uart.h>
 
 void PlatformInit(int argc, char *argv[])
 {

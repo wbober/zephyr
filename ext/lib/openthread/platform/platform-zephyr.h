@@ -35,7 +35,7 @@
 #ifndef PLATFORM_ZEPHYR_H_
 #define PLATFORM_ZEPHYR_H_
 
-#include <openthread.h>
+#include <openthread/openthread.h>
 
 /**
  * This function initializes the alarm service used by OpenThread.

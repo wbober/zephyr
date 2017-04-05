@@ -28,7 +28,7 @@
 
 #include <kernel.h>
 
-#include <platform/alarm.h>
+#include <openthread/platform/alarm.h>
 #include "platform-zephyr.h"
 
 static bool isAlarmActive;

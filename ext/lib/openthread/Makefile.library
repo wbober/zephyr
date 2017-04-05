@@ -49,6 +49,10 @@ ifeq ($(CONFIG_OPENTHREAD_DIAG),y)
 configure_OPTIONS              += --enable-diag
 endif
 
+ifeq ($(CONFIG_OPENTHREAD_FTD),y)
+configure_OPTIONS              += --enable-ftd
+endif
+
 ifeq ($(DEFAULT_LOGGING),1)
 configure_OPTIONS              += --enable-default-logging
 endif
@@ -190,6 +194,7 @@ INSTALL="$(INSTALL) $(INSTALLFLAGS)" \
 CMP=diff CPP="$(CPP)" CC="$(CC)" CXX="$(CXX)" CCAS="$(CCAS)" OBJC="$(OBJC)" OBJCXX="$(OBJCXX)" AR="$(AR)" RANLIB="$(RANLIB)" NM="$(NM)" STRIP="$(STRIP)" CPPFLAGS="$(CPPFLAGS)" CFLAGS="$(CFLAGS)" CXXFLAGS="$(CXXFLAGS)" CCASFLAGS="$(CCASFLAGS)" LDFLAGS="$(LDFLAGS)" \
 --host=arm-none-eabi \
 --target=arm-none-eabi \
+--enable-no-executables-hack \
 --prefix=/ \
 $(configure_OPTIONS))
 endef # configure-arch

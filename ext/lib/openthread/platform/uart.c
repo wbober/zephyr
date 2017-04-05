@@ -28,7 +28,7 @@
 
 #include <assert.h>
 #include <uart.h>
-#include <platform/uart.h>
+#include <openthread/platform/uart.h>
 #include "platform-zephyr.h"
 
 #define UART_RX_BUFFER_SIZE 256

@@ -29,10 +29,15 @@ config OPENTHREAD_LOG_LEVEL
 	
 config OPENTHREAD_CLI
 	bool
-	prompt "CLI support"
+	prompt "Command Line Interface (CLI) support"
 	default y
 	
-config CONFIG_OPENTHREAD_DIAG
+config OPENTHREAD_FTD
+	bool
+	prompt "Full Thread Device (FTD) functions"
+	default y
+
+config OPENTHREAD_DIAG
 	bool
 	prompt "Diagnostic functions support"
 	default n

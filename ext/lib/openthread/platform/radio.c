@@ -47,10 +47,10 @@
 #include <net/ieee802154_radio.h>
 #include <net/nbuf.h>
 
-#include <platform/radio.h>
-#include <platform/diag.h>
+#include <openthread/platform/radio.h>
+#include <openthread/platform/diag.h>
 
-#include <openthread-types.h>
+#include <openthread/types.h>
 
 #define FCS_SIZE 2
 
